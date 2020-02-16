@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <router-link to="/">Home</router-link>
-    <router-link to="/details">Details</router-link>
-
-    <router-view></router-view>
+    <Navbar></Navbar>
+    <b-container>
+      <router-view></router-view>
+      <!-- Ajoute ici le contenu de la view -->
+    </b-container>
   </div>
 </template>
 
 <script>
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+
+import Navbar from "./components/NavBar.vue";
 export default {
   name: "App",
-  components: {}
+  components: {
+    Navbar
+  }
 };
 </script>
 
@@ -22,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
